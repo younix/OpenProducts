@@ -6,10 +6,10 @@ class category_list {
 	public $cat_list;
 	public $cat_main_list;
 
-	function __construct() {
+	public function __construct() {
 	}
 
-	function load() {
+	public function load() {
 		$sql_str = "SELECT id, parent_id, name FROM category";
 		$result = sqlite_query($db, $sql_str);
 		
@@ -19,7 +19,7 @@ class category_list {
 		}
 	}
 
-	function sort_cat_list() {
+	private function sort_cat_list() {
 		foreach($this->cat_list as $cat)
 			foreach($this->cat_list as $sub_cat)
 				if($cat->id == $sub_cat->parent_id)
@@ -40,7 +40,7 @@ class category {
 	public $parent_id;
 	public $name;
 
-	function __construct($id, $parent_id, $name) {
+	public function __construct($id, $parent_id, $name) {
 		$this->id = $id;
 		$this->parent_id = $parent_id;
 		$this->name = $name;

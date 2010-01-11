@@ -24,9 +24,9 @@ class db_object {
 		$fh = fopen($this->filename_sql_init, 'r');
 		$sql_str = fread($fh);
 		$fclose($fh);
+
+
 	}
 }
-
-$db_file_name = "../database/database.sqlite2";
 
 ?>

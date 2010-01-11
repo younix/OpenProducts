@@ -3,7 +3,7 @@
 class template_builder {
 	
 	private $file_name;
-	private $template_list;
+	private $template_list = array();
 	private $content;
 
 	public function __construct($file_name) {
@@ -26,7 +26,7 @@ class template_builder {
 
 	private function insert_template_list() {
 		
-		foreach($this->template_list as $name => $value) {
+		foreach ($this->template_list as $name => $value) {
 			$name = "_?" . StrToUpper($name) . "?_";
 			$this->content = str_replace($name, $value, $this->content);
 		}
