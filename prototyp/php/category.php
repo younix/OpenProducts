@@ -11,7 +11,7 @@ class category_list {
 
 	function load() {
 		$sql_str = "SELECT id, parent_id, name FROM category";
-		$result = $db->query($sql_str);
+		$result = sqlite_query($db, $sql_str);
 		
 		while($row = $result->fetchArray()) {
 			$cat = new category($row["id"], $row["parent_id"], $row["name"]);
