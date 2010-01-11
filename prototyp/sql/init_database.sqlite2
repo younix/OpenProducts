@@ -1,6 +1,13 @@
 CREATE TABLE						\
-	IF NO EXISTS					\
+	IF NOT EXISTS					\
 	category					\
 		(id INTEGER PRIMARY KEY AUTOINCREMENT),	\
 		(parent_id INTEGER),			\
-		(name TEXT)
+		(name TEXT);
+
+CREATE TABLE
+	IF NOT EXISTS
+	attribut
+		(id INTEGER PRIMARY KEY AUTOINCREMENT),	\
+		(name TEXT)				\
+		(unit TEXT);
