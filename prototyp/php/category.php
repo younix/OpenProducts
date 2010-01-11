@@ -1,5 +1,7 @@
 <?php
 
+require_once("db_obj.php");
+
 class category_list {
 	public $cat_list;
 	public $cat_main_list;
