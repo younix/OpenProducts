@@ -6,15 +6,15 @@ class template_builder {
 	private $template_list;
 	private $content;
 
-	function __construct($file_name) {
+	public function __construct($file_name) {
 		$this->file_name = $file_name;
 	}
 
-	function set_att($name, $value) {
+	public function set_att($name, $value) {
 		$this->template_list[$name] = $value;
 	}
 	
-	function get_src() {
+	public function get_src() {
 		$fh = fopen($this->file_name, 'r');
 		$this->content = fread ($fh, filesize($this->file_name));
 		fclose($fh);
@@ -24,7 +24,7 @@ class template_builder {
 		return $this->content;
 	}
 
-	function insert_template_list() {
+	private function insert_template_list() {
 		
 		foreach($this->template_list as $name => $value) {
 			$name = "_?" . StrToUpper($name) . "?_";
